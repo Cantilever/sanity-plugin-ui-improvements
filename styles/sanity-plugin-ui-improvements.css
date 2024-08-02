@@ -1,0 +1,89 @@
+:root {
+  --border-color: #c5c8ce;
+  --section-background-color: #ffffff;
+  --box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --box-shadow-focus: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  --scroller-background: #f2f5f8;
+  --dashed-border-color: #e0e0e0;
+  --text-color: black;
+  --input-background: #ffffff;
+  --input-border: #c5c8ce;
+}
+
+[data-ui='DialogCard'] {
+  max-width: none !important;
+}
+
+[data-ui='Grid'] td {
+  min-width: 200px !important;
+}
+
+[data-ui='Container'] {
+  max-width: 75rem !important;
+}
+
+.pt-block {
+  max-width: none !important;
+}
+
+form > [data-ui='Stack'] > [data-ui='Stack'] {
+  padding: 10px 20px 20px 20px;
+  border: 1px solid var(--border-color);
+  background: var(--section-background-color);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.5s ease;
+  color: var(--card-fg-color);
+}
+
+form > [data-ui='Stack'] > [data-ui='Stack']:focus-within {
+  box-shadow: var(--box-shadow-focus);
+}
+
+[data-testid='document-panel-scroller'] {
+  background: var(--scroller-background);
+}
+
+[data-testid='document-panel-scroller'] [data-ui='Grid'] > div {
+  border-bottom: 1px dashed var(--dashed-border-color);
+}
+
+[data-testid='document-panel-scroller'] [data-ui='Grid'] > div:last-child {
+  border-bottom: none;
+}
+
+[data-ui='ListPane'] ul li,
+[data-ui='DocumentListPane'] ul li {
+  border-bottom: 1px solid var(--dashed-border-color);
+  padding: 5px;
+}
+
+[data-ui='ListPane'] ul li:first-child,
+[data-ui='DocumentListPane'] ul li:first-child {
+  border-top: 1px solid var(--dashed-border-color);
+}
+
+[data-ui='DocumentListPane'] ul li:last-child {
+  border-bottom: none;
+}
+
+[data-ui='DocumentListPane'] [data-as='input'] {
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
+  color: var(--text-color);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border-color: #393d4f;
+    --section-background-color: #1c1e29;
+    --box-shadow-focus: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    --scroller-background: #161820;
+    --dashed-border-color: #2a2d3a;
+    --text-color: white;
+    --input-background: #1c1e29;
+    --input-border: #393d4f;
+  }
+}
