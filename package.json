@@ -10,5 +10,9 @@
   "license": "ISC",
   "peerDependencies": {
     "sanity": "^3.52.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cantilever/sanity-plugin-ui-improvements.git"
   }
 }
