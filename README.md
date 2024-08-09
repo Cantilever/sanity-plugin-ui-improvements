@@ -36,3 +36,7 @@ This plugin improves the UI interface of Sanity Studio by:
 ## License
 
 MIT License
+
+## Feedback
+
+This plugin was developed by the happy folks at [Cantilever.co](https://www.cantilever.co/)! If you have any feedback please open an issue on our [Github repository](https://github.com/Cantilever/sanity-plugin-ui-improvements/issues)

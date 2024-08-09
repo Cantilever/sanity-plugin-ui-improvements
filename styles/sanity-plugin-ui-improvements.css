@@ -73,27 +73,36 @@ form>[data-ui='Stack'] {
   }
 }
 
+/* Consistent selected states for buttons and links */
+a, button {
+  &[data-pressed],
+  &[data-selected] {
+    background-color: var(--active-color);
+    color: white;
+
+    span {
+      color: white;
+    }
+
+    svg {
+      color: white;
+      fill: white;
+
+      path {
+        stroke: white;
+      }
+    }
+  }
+}
+
 [data-ui='ListPane'],
 [data-ui='DocumentListPane'] {
   & ul li {
     border-bottom: 1px solid var(--dashed-border-color);
     padding: 0;
-
-    padding: 0;
     
       a {
         margin-bottom: 0;
-
-        &[data-pressed] {
-          background-color: var(--active-color);
-          color: white;
-
-          svg {
-            path {
-              stroke: white;
-            }
-          }
-        }
 
         > div {
           padding: 10px;
@@ -130,13 +139,5 @@ form>[data-ui='Stack'] {
     padding: 15px;
     border: 1px solid var(--border-color);
     box-shadow: var(--box-shadow) !important;
-
-    &[data-selected] {
-      background-color: var(--active-color);
-
-      & [data-ui="Text"] {
-        color: white;
-      }
-    }
   }
 }
