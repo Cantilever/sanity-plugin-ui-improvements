@@ -1,4 +1,5 @@
-:root {
+:root,
+[data-scheme="light"] {
   --border-color: #c5c8ce;
   --section-background-color: #ffffff;
   --box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -8,71 +9,7 @@
   --text-color: black;
   --input-background: #ffffff;
   --input-border: #c5c8ce;
-}
-
-[data-ui='DialogCard'] {
-  max-width: none !important;
-}
-
-[data-ui='Grid'] td {
-  min-width: 200px !important;
-}
-
-[data-ui='Container'] {
-  max-width: 75rem !important;
-}
-
-.pt-block {
-  max-width: none !important;
-}
-
-form > [data-ui='Stack'] > [data-ui='Stack'] {
-  padding: 10px 20px 20px 20px;
-  border: 1px solid var(--border-color);
-  background: var(--section-background-color);
-  border-radius: 5px;
-  box-shadow: var(--box-shadow);
-  transition: all 0.5s ease;
-  color: var(--card-fg-color);
-}
-
-form > [data-ui='Stack'] > [data-ui='Stack']:focus-within {
-  box-shadow: var(--box-shadow-focus);
-}
-
-[data-testid='document-panel-scroller'] {
-  background: var(--scroller-background);
-}
-
-[data-testid='document-panel-scroller'] [data-ui='Grid'] > div {
-  border-bottom: 1px dashed var(--dashed-border-color);
-}
-
-[data-testid='document-panel-scroller'] [data-ui='Grid'] > div:last-child {
-  border-bottom: none;
-}
-
-[data-ui='ListPane'] ul li,
-[data-ui='DocumentListPane'] ul li {
-  border-bottom: 1px solid var(--dashed-border-color);
-  padding: 5px;
-}
-
-[data-ui='ListPane'] ul li:first-child,
-[data-ui='DocumentListPane'] ul li:first-child {
-  border-top: 1px solid var(--dashed-border-color);
-}
-
-[data-ui='DocumentListPane'] ul li:last-child {
-  border-bottom: none;
-}
-
-[data-ui='DocumentListPane'] [data-as='input'] {
-  border: 1px solid var(--input-border);
-  background: var(--input-background);
-  color: var(--text-color);
-  border-radius: 5px;
-  padding: 10px;
+  --active-color: #556bfc;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -85,5 +22,121 @@ form > [data-ui='Stack'] > [data-ui='Stack']:focus-within {
     --text-color: white;
     --input-background: #1c1e29;
     --input-border: #393d4f;
+  }
+}
+
+[data-ui='DialogCard'] {
+  max-width: none !important;
+}
+
+[data-ui='Grid'] {
+  & td {
+    min-width: 200px !important;
+  }
+}
+
+[data-ui='Container'] {
+  max-width: 75rem !important;
+}
+
+.pt-block {
+  max-width: none !important;
+}
+
+form>[data-ui='Stack'] {
+  grid-gap: 30px;
+
+  &>[data-ui='Stack'] {
+    padding: 10px 20px 20px 20px;
+    border: 1px solid var(--border-color);
+    background: var(--section-background-color);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    transition: all 0.5s ease;
+    color: var(--card-fg-color);
+
+    &:focus-within {
+      box-shadow: var(--box-shadow-focus);
+    }
+  }
+}
+
+[data-testid='document-panel-scroller'] {
+  background: var(--scroller-background);
+}
+
+[data-ui="ArrayInput__content"]>[data-ui="Card"]>div>div {
+  border-bottom: 1px dashed var(--dashed-border-color);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+[data-ui='ListPane'],
+[data-ui='DocumentListPane'] {
+  & ul li {
+    border-bottom: 1px solid var(--dashed-border-color);
+    padding: 0;
+
+    padding: 0;
+    
+      a {
+        margin-bottom: 0;
+
+        &[data-pressed] {
+          background-color: var(--active-color);
+          color: white;
+
+          svg {
+            path {
+              stroke: white;
+            }
+          }
+        }
+
+        > div {
+          padding: 10px;
+        }
+      }
+
+    &:first-child {
+      border-top: 1px solid var(--dashed-border-color);
+    }
+  }
+}
+
+/* Document List Pane */
+[data-ui='DocumentListPane'] {
+
+  & ul li:last-child {
+    border-bottom: none;
+  }
+
+  & [data-as='input'] {
+    border: 1px solid var(--input-border);
+    background: var(--input-background);
+    color: var(--text-color);
+    border-radius: 5px;
+    padding: 10px;
+  }
+}
+
+[data-testid="field-groups"] {
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--border-color);
+
+  & [data-ui="Tab"] {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow) !important;
+
+    &[data-selected] {
+      background-color: var(--active-color);
+
+      & [data-ui="Text"] {
+        color: white;
+      }
+    }
   }
 }
