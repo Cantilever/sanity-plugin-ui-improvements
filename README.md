@@ -20,8 +20,10 @@ import { sanityUIImprovements } from 'sanity-plugin-ui-improvements';
 
 ## Preview
 
+### Before
 ![Before](https://github.com/user-attachments/assets/58990e2e-0ffc-42b6-bc76-659a60772324)
 
+### After
 ![After](https://github.com/user-attachments/assets/c4d801aa-f272-478f-be09-644cb3b5aad2)
 
 
