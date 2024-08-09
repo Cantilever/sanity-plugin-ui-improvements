@@ -2,6 +2,13 @@
   "name": "sanity-plugin-ui-improvements",
   "version": "1.0.2",
   "description": "Plugin for Sanity which provides visual improvements to the interface",
+  "keywords": [
+    "sanity",
+    "sanity-plugin",
+    "sanity-studio",
+    "sanity-io",
+    "sanity-cms"
+  ],
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
