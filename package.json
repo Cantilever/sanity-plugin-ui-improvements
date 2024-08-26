@@ -9,7 +9,20 @@
     "sanity-io",
     "sanity-cms"
   ],
-  "main": "src/index.js",
+  "main": "index.js",
+  "module": "index.mjs",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "import": "./index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "index.mjs",
+    "styles"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
