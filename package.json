@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-ui-improvements",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Plugin for Sanity which provides visual improvements to the interface",
   "keywords": [
     "sanity",
@@ -9,19 +9,17 @@
     "sanity-io",
     "sanity-cms"
   ],
-  "main": "index.js",
-  "module": "index.mjs",
+  "main": "src/index.js",
+  "module": "src/index.mjs",
   "exports": {
     ".": {
-      "require": "./index.js",
-      "import": "./index.mjs"
+      "import": "./src/index.mjs",
+      "require": "./src/index.js"
     },
     "./package.json": "./package.json"
   },
   "files": [
-    "index.js",
-    "index.mjs",
-    "styles"
+    "src"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
