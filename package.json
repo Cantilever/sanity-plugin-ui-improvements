@@ -9,20 +9,15 @@
     "sanity-io",
     "sanity-cms"
   ],
-  "main": "src/index.js",
-  "module": "src/index.mjs",
-  "exports": {
-    ".": {
-      "import": "./src/index.mjs",
-      "require": "./src/index.js"
-    },
-    "./package.json": "./package.json"
-  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "prepublishOnly": "npm run build"
   },
   "author": "Cantilever.co",
   "license": "ISC",
@@ -32,5 +27,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cantilever/sanity-plugin-ui-improvements.git"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^4.21.1",
+    "rollup-plugin-postcss": "^4.0.2"
   }
 }

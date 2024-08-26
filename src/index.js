@@ -1,9 +1,6 @@
-const { definePlugin } = require('sanity');
-require('../styles/sanity-plugin-ui-improvements.css');
+import { definePlugin } from 'sanity';
+import './styles/sanity-plugin-ui-improvements.css';
 
-const sanityUIImprovements = definePlugin({
+export const sanityUIImprovements = definePlugin({
   name: 'sanity-plugin-ui-improvements',
 });
-
-module.exports = sanityUIImprovements;
-module.exports.sanityUIImprovements = sanityUIImprovements;
